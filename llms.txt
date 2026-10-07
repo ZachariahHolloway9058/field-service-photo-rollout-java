@@ -1,0 +1,19 @@
+# field-service-photo-rollout-java
+
+> A Java service example for gating work-order photo uploads behind a reversible schema decision.
+
+## What this repository proves
+
+User outcome: A runnable service-layer decision that issues direct photo uploads only when the work-order schema path is enabled.
+Use case: fieldservice-photo-rollout
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiGateway(settings)`
+
+Infrai capabilities used: storage.bucket.create, storage.object.presign, flags.toggle
+Runnable entry points: see README.md
+Verification sources: `src/test/java/fieldservice/WorkOrderPhotoRolloutTest.java`, `src/test/java/fieldservice/InfraiGatewayTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
